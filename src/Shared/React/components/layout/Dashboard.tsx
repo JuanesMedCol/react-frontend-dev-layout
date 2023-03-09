@@ -6,7 +6,7 @@ export const Dashboard = () => {
     <Wrapper>
       <WrapperHeader>
         <nav>
-          <Link to="/cors">Cursos</Link>
+          <Link to="/project">Cursos</Link>
         </nav>
       </WrapperHeader>
       <Outlet/>

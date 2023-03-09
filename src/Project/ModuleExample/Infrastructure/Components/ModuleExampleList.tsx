@@ -4,28 +4,27 @@ import { WrapperContent, WrapperTitle } from '../../../../Shared/React/component
 import { DataTableStyle } from '../../../../Shared/React/components/styles/DataTableStyle';
 import { TableFilter } from '../../../../Shared/React/components/styles/Tables';
 
-import { Dependency } from '../../Domain/Interfaces';
-import { DependencyDeleteService, DependencyListService } from '../../Domain/Services/DependencyApplicationServices';
+import { ModuleExample } from '../../Domain/Interfaces';
+import { ModuleExampleDeleteService, ModuleExampleListService } from '../../Domain/Services/ModuleExampleApplicationServices';
 import { PencilIcon, TrashIcon } from '@heroicons/react/outline';
 import { toast, ToastContainer } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { LinkPrimary } from '../../../../Shared/React/components/styles/Buttons';
 import { ValidatorBox } from '../../../../Shared/React/components/field/ValidatorBox';
-import { toastAlert } from '../../../../Shared/Toast/Alert';
 
 
-export const DependencyList = () => {
+export const ModuleExampleList = () => {
     
-    const [dependencies, setDependency] = useState<Dependency[]>([]);
+    const [examples, setModuleExample] = useState<ModuleExample[]>([]);
     
     useEffect(() => {
-        DependencyListService().then(setDependency)
+        ModuleExampleListService().then(setModuleExample)
     }, [])
 
-    const DependencyDelete = (id: string) => {
-      DependencyDeleteService(id).then((resp) => { 
+    const ModuleExampleDelete = (id: string) => {
+      ModuleExampleDeleteService(id).then((resp) => { 
         if (JSON.stringify(resp.success) === 'true') {
-          setDependency(prev => prev.filter(dependency => dependency.id !== id));
+          setModuleExample(prev => prev.filter(example => example.id !== id));
           toast.info('Se ha eliminado una dependencia',
                     {
                     position: 'bottom-center',
@@ -44,21 +43,12 @@ export const DependencyList = () => {
           )
     }
 
-  const DependencyItem =
+  const ModuleExampleItem =
   [
     {
       name: 'Nombre',
       selector: (row:any) => row.name,
       cell: (row:any) => row.name,
-      sortable: true,
-      reorder: true,
-      filterable: true,
-      marginBottom: '10px',
-    },
-     {
-      name: 'Código del Sistema',
-      selector: (row:any) => row.system_code,
-      cell: (row:any) => row.system_code,
       sortable: true,
       reorder: true,
       filterable: true,
@@ -76,15 +66,15 @@ export const DependencyList = () => {
                     <PencilIcon className='text-primary-900' height='28px'/>
           </Link>
           {
-                <button title='Borrar un Ejemplo' data-bs-toggle="modal" data-bs-target={"#deleteDependency-"+row.id} >
+                <button title='Borrar un Ejemplo' data-bs-toggle="modal" data-bs-target={"#deleteModuleExample-"+row.id} >
                 <TrashIcon className='text-primary-900' height='28px' />
                 </button>
           }
           <ValidatorBox
                         id={row.id}
                         name={row.name}
-                        actionname="deleteDependency"
-                        service={DependencyDelete}
+                        actionname="deleteModuleExample"
+                        service={ModuleExampleDelete}
                         action="deshabilitar la dependencia"
                         />
         </div>
@@ -105,8 +95,8 @@ export const DependencyList = () => {
             </div>
             }
         <TableFilter 
-              columns={DependencyItem}
-              data={dependencies}
+              columns={ModuleExampleItem}
+              data={examples}
               customStyles={DataTableStyle}
               pagination
               responsive

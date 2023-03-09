@@ -1,7 +1,7 @@
 import { toast, ToastOptions } from "react-toastify";
 import { ResponseDTO } from "../Http/ResponseDTO";
 import 'react-toastify/dist/ReactToastify.css'
-import { DependenciesResponseDTO, DependencyResponseDTO } from "../../CORS/Dependency/Domain/Interfaces";
+import { ModuleExamplesResponseDTO, ModuleExampleResponseDTO } from "../../Project/ModuleExample/Domain/Interfaces";
 
 const toastConfigurations:ToastOptions = {
     position: toast.POSITION.BOTTOM_CENTER,
@@ -26,7 +26,7 @@ const toastSideConfigurations:ToastOptions = {
     hideProgressBar: true, 
     autoClose: 2500
 }
-export const toastAlert = (response:ResponseDTO | DependenciesResponseDTO | DependencyResponseDTO )  => {
+export const toastAlert = (response:ResponseDTO | ModuleExamplesResponseDTO | ModuleExampleResponseDTO )  => {
     console.log(response.message)
     if (! response.success) {
         const resptext = JSON.stringify(response.errors).replace(/[`~!@#$%^&*()_|+\-=?;'".<>\{\}\[\]\\\/]/gi, '\n')
@@ -36,7 +36,7 @@ export const toastAlert = (response:ResponseDTO | DependenciesResponseDTO | Depe
     toast.success('¡Acción completada correctamente!', toastConfigurations)
     return true;
 }
-export const toastLeftAlert = (response: ResponseDTO | DependenciesResponseDTO | DependencyResponseDTO )  => {
+export const toastLeftAlert = (response: ResponseDTO | ModuleExamplesResponseDTO | ModuleExampleResponseDTO )  => {
     console.log(response.message)
     if (! response.success) {
         const resptext = JSON.stringify(response.errors).replace(/[`~!@#$%^&*()_|+\-=?;'".<>\{\}\[\]\\\/]/gi, '\n')

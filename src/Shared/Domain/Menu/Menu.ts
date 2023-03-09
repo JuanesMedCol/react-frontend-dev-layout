@@ -25,7 +25,7 @@ interface Menu {
 export const MenuPlatform: Menu = {
     items: [
         {
-            name: 'Administración',
+            name: 'Menu Principal',
             icon: 'ArchiveIcon',
             menuActive: ['/example', ],
             path: null,

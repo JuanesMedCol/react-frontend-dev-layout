@@ -5,7 +5,7 @@ import {ButtonPrimary} from "../../../../Shared/React/components/styles/Buttons"
 
 
 
-export const DependencyFieldsForm = () => {
+export const ModuleExampleFieldsForm = () => {
     
     const navigate = useNavigate();
     const handleReturn = () => {

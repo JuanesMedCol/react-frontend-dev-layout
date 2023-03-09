@@ -1,8 +1,8 @@
-    import { INITIAL_VALUE_DEPENDENCY } from "../../Domain/Types";
-    import { DependencyFieldsForm } from './DependencyFieldsForm';
-    import { DependencyValidationSchema } from '../Validation/DependencyValidationSchema';
-    import { DependencyCreateService } from '../../Domain/Services/DependencyApplicationServices';
-    import { Dependency } from '../../Domain/Interfaces';
+    import { INITIAL_VALUE_EXAMPLE } from "../../Domain/Types";
+    import { ModuleExampleFieldsForm } from './ModuleExampleFieldsForm';
+    import { ModuleExampleValidationSchema } from '../Validation/ModuleExampleValidationSchema';
+    import { ModuleExampleCreateService } from '../../Domain/Services/ModuleExampleApplicationServices';
+    import { ModuleExample } from '../../Domain/Interfaces';
     import { Formik } from "formik";
     import { WrapperContent, WrapperTitle } from "../../../../Shared/React/components/styles/Wrappers";
     import { useNavigate } from 'react-router-dom';
@@ -11,14 +11,14 @@
     import { toast, ToastContainer } from 'react-toastify';
     
 
-export const DependencyCreate = () => {
+export const ModuleExampleCreate = () => {
     
     const navigate = useNavigate();
-    const onSubmitEventElement = (Dependency:Dependency) => {
-        Dependency.id = uuidv4();
-        DependencyCreateService(Dependency).then((resp) =>{
+    const onSubmitEventElement = (ModuleExample:ModuleExample) => {
+        ModuleExample.id = uuidv4();
+        ModuleExampleCreateService(ModuleExample).then((resp) =>{
             if (JSON.stringify(resp.success) === 'false')  {
-                toast.error('Hay una dependencia que coincide con el acrónimo que se puede crear para esta',
+                toast.error('Hay un conflicto al momento de crear',
                     {
                     position: 'bottom-center',
                     closeButton: false,
@@ -44,13 +44,13 @@ export const DependencyCreate = () => {
         </WrapperTitle>
         <WrapperContent>
             <Formik
-                initialValues={INITIAL_VALUE_DEPENDENCY}
+                initialValues={INITIAL_VALUE_EXAMPLE}
                 onSubmit={ (values) => { onSubmitEventElement(values) }}
-                validationSchema={DependencyValidationSchema}
+                validationSchema={ModuleExampleValidationSchema}
                 >
                 {
                     (formmik) => (
-                        <DependencyFieldsForm />
+                        <ModuleExampleFieldsForm />
                     )
                 }
             </Formik>

@@ -1,5 +1,5 @@
 import {object, string} from 'yup'
 
-export const DependencyValidationSchema = object().shape({
+export const ModuleExampleValidationSchema = object().shape({
     name                : string ().required('Requerido'),
 })
