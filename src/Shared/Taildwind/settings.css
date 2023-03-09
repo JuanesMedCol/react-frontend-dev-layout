@@ -1,0 +1,17 @@
+@import "./tailwind.css";
+
+.isActive {
+    @apply bg-primary-500;
+    color: #67b5dd !important;
+}
+
+.isOpen {
+    display: block !important;
+}
+
+.isReadOnly, input[readonly]{
+
+    background-color: #F7F8F9 !important;
+    color: #686868 !important;
+
+}

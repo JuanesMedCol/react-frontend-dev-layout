@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        table{
+
+            border-collapse: collapse;
+        }
+        table th{
+            background-color: #243f59;
+            color: white;
+            font-weight: bold;
+            padding:.5rem;
+            border-right: 2px solid #67b5dd;
+
+        }
+        table th:last-child
+        {
+            border-right: none;
+        }
+        table tr{
+            background-color: white;
+        }
+        table tr:nth-child(odd){
+            background-color: #f2f2f2;
+        }
+        table td{
+
+            padding:.5rem;
+            border-right: 2px solid #ccc;
+
+        }
+        table td:last-child
+        {
+            border-right: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header class="flex">
+        <div class="w-48 flex-none flex justify-center content-center px-2">
+            <img src="icon.svg" alt="" width="175">
+        </div>
+        <div class="grow bg-gray-200 flex justify-end px-4 rounded-bl-lg py-2">
+            <div class="flex flex-col">
+                <span>Bienvenid@</span>
+                <span>UserName</span>
+            </div>
+        </div>
+    </header>
+    <section class="flex relative">
+        <nav class="w-48 bg-gray-200 rounded-tr-lg p-2 min-h-[calc(100vh-64px)]	absolute top-0 left-0">
+            <ul>
+                <li>
+                    <div class="flex flex-wrap bg-blue-800 p-2 rounded-lg text-white my-1">
+                        <span class="mr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                        </span>
+                        <span>
+                            Inicio 
+                        </span>    
+                    </div>
+                </li>
+                <li>
+                    <div class="flex flex-wrap hover:bg-blue-800 p-2 rounded-lg text-white">
+                        <span class="mr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                            </svg>
+                        </span>
+                        <span>
+                            ItemName
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </span>
+                    </div>
+                    <ul class="bg-white mx-1 w-99 rounded-lg p-2 my-1 text-blue-900 relative">
+                        <li>
+                            Menu 1
+                        </li>
+                        <li class="w-full relative">
+                            Menu 2
+                            <ul class="absolute bg-white w-full overflow-hidden -right-32 top-0 w-99 rounded-lg shadow-md">
+                                <li class="py-2 bg-blue-800 text-white text-center">ItemName</li>
+                                <li class="px-2 py-1">Sub Item 1</li>
+                                <li class="px-2 py-1">Sub Item 2</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <main style="margin: 0 0 0 12rem; padding: 1rem;">
+            <div class="Title text-3xl font-black">
+                Titulo de sección
+            </div>
+            <div class="Contenido bg-gray-200 p-2 rounded-md" style="width: calc(100vw - 14.5rem);">
+                <table class="w-full">
+                    <thead>
+                        <tr>
+                            <th>item 1</th>
+                            <th>item 2</th>
+                            <th>item 3</th>
+                            <th>item 4</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Valor 1</td>
+                            <td>Valor 2</td>
+                            <td>Valor 3</td>
+                            <td>Valor 4</td>
+                        </tr>
+                        <tr>
+                            <td>Valor 1</td>
+                            <td>Valor 2</td>
+                            <td>Valor 3</td>
+                            <td>Valor 4</td>
+                        </tr>
+                        <tr>
+                            <td>Valor 1</td>
+                            <td>Valor 2</td>
+                            <td>Valor 3</td>
+                            <td>Valor 4</td>
+                        </tr>
+                        <tr>
+                            <td>Valor 1</td>
+                            <td>Valor 2</td>
+                            <td>Valor 3</td>
+                            <td>Valor 4</td>
+                        </tr>
+                        <tr>
+                            <td>Valor 1</td>
+                            <td>Valor 2</td>
+                            <td>Valor 3</td>
+                            <td>Valor 4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </section>
+</body>
+</html>
