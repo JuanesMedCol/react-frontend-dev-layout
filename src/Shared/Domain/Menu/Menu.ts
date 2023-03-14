@@ -35,6 +35,11 @@ export const MenuPlatform: Menu = {
                     path: '/example',
                     children: null,
                 },
+                {
+                    name: 'Patata',
+                    path: '/patata',
+                    children: null,
+                },
             ]
 
         },

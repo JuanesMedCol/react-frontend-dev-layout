@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 import { ModuleExampleCreate } from "./Components/ModuleExampleCreate"
-import { ModuleExampleEdit } from "./Components/ModuleExampleEdit"
 import {  ModuleExampleList  } from "./Components/ModuleExampleList"
+import { ModuleExampleEdit } from "./Components/ModuleExampleEdit"
 
 export const ModuleExampleRouter = () => 
 {

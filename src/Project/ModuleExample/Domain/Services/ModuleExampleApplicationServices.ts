@@ -10,11 +10,11 @@ export const ModuleExampleListService = async () => {
 };
 
 export const ModuleExampleCreateService = async (example: ModuleExample | any) => {
-  return await http.post<ModuleExampleResponseDTO>('example/create', JSON.stringify(example));
+  return await http.post<ModuleExampleResponseDTO>('product/create', JSON.stringify(example));
 };
 
 export const ModuleExampleSearchByIdService = async (id: string) => {
-  const ModuleExample = await http.get<ModuleExampleResponseDTO>('example/dependencia/' + id);
+  const ModuleExample = await http.get<ModuleExampleResponseDTO>('example/' + id);
   return ModuleExample.payload.data;
 };
 

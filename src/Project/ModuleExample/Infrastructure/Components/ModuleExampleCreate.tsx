@@ -14,6 +14,8 @@
 export const ModuleExampleCreate = () => {
     
     const navigate = useNavigate();
+
+    
     const onSubmitEventElement = (ModuleExample:ModuleExample) => {
         ModuleExample.id = uuidv4();
         ModuleExampleCreateService(ModuleExample).then((resp) =>{
